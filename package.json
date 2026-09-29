@@ -1,0 +1,9 @@
+{
+  "name": "talk-your-shit",
+  "version": "1.0.0",
+  "description": "TALK YOUR SH*T — Free live training with Jamie Arrigo. Webinar registration landing page.",
+  "scripts": {
+    "dev": "npx wrangler pages dev .",
+    "deploy": "npx wrangler pages deploy . --project-name=talk-your-shit"
+  }
+}

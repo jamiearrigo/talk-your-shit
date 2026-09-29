@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALK YOUR SH*T — Free Live Training with Jamie Arrigo</title>
+  <meta name="description" content="Turn the opinions you only share off-camera into social content people send with 'THIS.' Free live training with Jamie Arrigo. Oct 1 · 12 PM ET." />
+
+  <!-- Fonts: EB Garamond (headline fallback for Advercase), Archivo (body/buttons), IBM Plex Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========== Design Tokens ========== */
+    :root {
+      --signal-red: #E5252B;
+      --ink: #17120F;
+      --ground: #EBE6D8;
+      --sheet: #F2ECE0;
+      --hairline: #C9BFAB;
+      --bright-blue: #245BFF;
+
+      --font-headline: 'EB Garamond', Georgia, 'Times New Roman', serif;
+      --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+      --content-max: 1160px;
+      --reading-max: 700px;
+      --desktop-gutter: 40px;
+      --mobile-gutter: 22px;
+      --desktop-section-pad: 96px;
+      --mobile-section-pad: 56px;
+
+      --body-size-desktop: 21px;
+      --body-size-mobile: 18px;
+      --body-line-height: 1.6;
+    }
+
+    /* ========== Reset ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--body-size-mobile);
+      line-height: var(--body-line-height);
+      color: var(--ink);
+      background: var(--sheet);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        font-size: var(--body-size-desktop);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========== Layout Helpers ========== */
+    .container {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding-left: var(--mobile-gutter);
+      padding-right: var(--mobile-gutter);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: var(--desktop-gutter);
+        padding-right: var(--desktop-gutter);
+      }
+    }
+
+    .reading-column {
+      max-width: var(--reading-max);
+    }
+
+    section {
+      padding-top: var(--mobile-section-pad);
+      padding-bottom: var(--mobile-section-pad);
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding-top: var(--desktop-section-pad);
+        padding-bottom: var(--desktop-section-pad);
+      }
+    }
+
+    /* ========== Typography ========== */
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .display-headline {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+    }
+
+    .editorial-headline {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.005em;
+    }
+
+    /* ========== Buttons ========== */
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      background: var(--signal-red);
+      color: var(--sheet);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+      text-decoration: none;
+      text-align: center;
+      min-height: 56px;
+      line-height: 1.2;
+    }
+
+    .cta-button:hover {
+      background: #c81f25;
+      transform: translateY(-1px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    .cta-button:focus-visible {
+      outline: 3px solid var(--bright-blue);
+      outline-offset: 3px;
+    }
+
+    .cta-button--ink {
+      background: var(--ink);
+      color: var(--sheet);
+    }
+
+    .cta-button--ink:hover {
+      background: #2a2018;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      background: var(--ink);
+      color: var(--sheet);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding-top: 48px;
+      padding-bottom: 64px;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        min-height: 88vh;
+        padding-bottom: 96px;
+      }
+    }
+
+    .hero__ocean {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero__ocean-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.55;
+      filter: saturate(0.7) contrast(1.05);
+    }
+
+    .hero__ocean-placeholder {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #0a0807 0%, #131015 40%, #1a1614 70%, #17120F 100%);
+    }
+
+    .hero__ocean-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(23, 18, 15, 0.3) 0%, rgba(23, 18, 15, 0.55) 40%, rgba(23, 18, 15, 0.88) 80%, rgba(23, 18, 15, 0.97) 100%);
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero__label {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sheet);
+      opacity: 0.7;
+      margin-bottom: 24px;
+    }
+
+    .hero__title {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: clamp(56px, 14vw, 148px);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: var(--signal-red);
+      margin-bottom: 32px;
+    }
+
+    .hero__promise {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-size: clamp(22px, 4vw, 38px);
+      line-height: 1.3;
+      max-width: 680px;
+      color: var(--sheet);
+      margin-bottom: 28px;
+    }
+
+    .hero__event {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--sheet);
+      opacity: 0.8;
+      margin-bottom: 36px;
+    }
+
+    .hero__cta {
+      display: inline-block;
+    }
+
+    /* ========== Section: Opening Argument (paper) ========== */
+    .opening-argument {
+      background: var(--sheet);
+      color: var(--ink);
+    }
+
+    .opening-argument__lead {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(26px, 4.5vw, 40px);
+      line-height: 1.25;
+      margin-bottom: 32px;
+    }
+
+    .opening-argument p {
+      margin-bottom: 24px;
+      max-width: var(--reading-max);
+    }
+
+    .opening-argument__emphasis {
+      font-weight: 600;
+    }
+
+    .opening-argument__closing-line {
+      font-style: italic;
+      color: var(--ink);
+      opacity: 0.85;
+      margin-top: 8px;
+    }
+
+    .opening-argument__cta-wrap {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .opening-argument__cta-wrap .hero__event {
+      color: var(--ink);
+      opacity: 0.7;
+      margin-bottom: 0;
+    }
+
+    /* ========== Testimonial: Pull-quote style ========== */
+    .testimonial-pull {
+      background: var(--ground);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .testimonial-pull__quote {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1.32;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .testimonial-pull__attribution {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+
+    /* ========== Transition section ========== */
+    .transition-section {
+      background: var(--sheet);
+    }
+
+    .transition-section__headline {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    .transition-section p {
+      margin-bottom: 20px;
+      max-width: var(--reading-max);
+    }
+
+    /* ========== What They'll Learn ========== */
+    .what-theyll-learn {
+      background: var(--ground);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .what-theyll-learn__heading {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 48px;
+    }
+
+    .teaching-list {
+      list-style: none;
+    }
+
+    .teaching-item {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .teaching-item:last-child {
+      border-bottom: none;
+    }
+
+    .teaching-item:first-child {
+      padding-top: 0;
+    }
+
+    .teaching-item__number {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--signal-red);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .teaching-item__title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(20px, 3.5vw, 28px);
+      line-height: 1.22;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .teaching-item__body {
+      font-size: var(--body-size-mobile);
+      line-height: var(--body-line-height);
+      max-width: var(--reading-max);
+    }
+
+    @media (min-width: 768px) {
+      .teaching-item__body {
+        font-size: var(--body-size-desktop);
+      }
+    }
+
+    .what-theyll-learn__cta {
+      margin-top: 48px;
+    }
+
+    /* ========== Testimonial: Heather Roma ========== */
+    .testimonial-heather {
+      background: var(--sheet);
+    }
+
+    .testimonial-heather__intro {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(22px, 4vw, 32px);
+      line-height: 1.3;
+      margin-bottom: 32px;
+      color: var(--ink);
+    }
+
+    .testimonial-heather__quote {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(20px, 3.5vw, 28px);
+      line-height: 1.4;
+      color: var(--ink);
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-heather__attribution {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+
+    /* ========== About Jamie ========== */
+    .about-jamie {
+      background: var(--ground);
+      border-top: 1px solid var(--hairline);
+    }
+
+    .about-jamie__grid {
+      display: grid;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (min-width: 768px) {
+      .about-jamie__grid {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 56px;
+      }
+    }
+
+    .about-jamie__photo {
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--hairline);
+      aspect-ratio: 4 / 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-jamie__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-jamie__photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--hairline);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--ink);
+      opacity: 0.5;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .about-jamie__heading {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: var(--ink);
+    }
+
+    .about-jamie__body p {
+      margin-bottom: 20px;
+      max-width: var(--reading-max);
+    }
+
+    .about-jamie__testimonial {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .about-jamie__testimonial-quote {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(18px, 3vw, 22px);
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 16px;
+      max-width: var(--reading-max);
+    }
+
+    .about-jamie__testimonial-attribution {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+
+    /* ========== Final Registration ========== */
+    .register {
+      background: var(--ink);
+      color: var(--sheet);
+    }
+
+    .register__heading {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.15;
+      color: var(--sheet);
+      margin-bottom: 24px;
+    }
+
+    .register__subheading {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-size: clamp(20px, 3.5vw, 28px);
+      line-height: 1.35;
+      color: var(--sheet);
+      opacity: 0.9;
+      margin-bottom: 12px;
+      max-width: var(--reading-max);
+    }
+
+    .register__event {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--signal-red);
+      margin-bottom: 40px;
+    }
+
+    .register__form {
+      max-width: 480px;
+    }
+
+    .register__form-field {
+      margin-bottom: 20px;
+    }
+
+    .register__form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--sheet);
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+
+    .register__form-input {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 17px;
+      padding: 14px 18px;
+      background: rgba(242, 236, 224, 0.06);
+      border: 1px solid var(--hairline);
+      border-radius: 4px;
+      color: var(--sheet);
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .register__form-input:focus {
+      outline: none;
+      border-color: var(--bright-blue);
+      background: rgba(242, 236, 224, 0.1);
+    }
+
+    .register__form-input::placeholder {
+      color: rgba(242, 236, 224, 0.3);
+    }
+
+    .register__form-input:invalid:not(:placeholder-shown) {
+      border-color: var(--signal-red);
+    }
+
+    .register__form-error {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--signal-red);
+      margin-top: 8px;
+      display: none;
+    }
+
+    .register__form-error.visible {
+      display: block;
+    }
+
+    .register__form-status {
+      font-family: var(--font-body);
+      font-size: 15px;
+      margin-top: 16px;
+      display: none;
+    }
+
+    .register__form-status.visible {
+      display: block;
+    }
+
+    .register__form-status--loading {
+      color: var(--sheet);
+      opacity: 0.7;
+    }
+
+    .register__form-status--error {
+      color: var(--signal-red);
+    }
+
+    .register__preview-note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(36, 91, 255, 0.1);
+      border: 1px solid rgba(36, 91, 255, 0.3);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--sheet);
+      opacity: 0.8;
+    }
+
+    .register__cta {
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .register__footer {
+      margin-top: 32px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--sheet);
+      opacity: 0.5;
+      line-height: 1.5;
+    }
+
+    /* ========== Asset placeholders ========== */
+    .hero-placeholder-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--sheet);
+      opacity: 0.25;
+      text-align: center;
+      z-index: 0;
+    }
+
+    /* ========== Reduced motion ========== */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* ========== Focus visibility ========== */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--bright-blue);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" aria-label="TALK YOUR SH*T — Free Live Training">
+    <div class="hero__ocean">
+      <!-- OCEAN IMAGE PLACEHOLDER — Replace with approved ocean artwork when supplied -->
+      <div class="hero__ocean-placeholder"></div>
+      <!-- When ocean image is available:
+        <img class="hero__ocean-img" src="assets/ocean-hero.jpg" alt="Cinematic ocean photograph — dark waves under dramatic sky" loading="eager" width="1920" height="1080" />
+      -->
+      <div class="hero-placeholder-text">[Ocean artwork placeholder — replace with supplied ocean hero image]</div>
+    </div>
+    <div class="hero__ocean-overlay"></div>
+    <div class="container hero__content">
+      <p class="hero__label">Free Live Training with Jamie Arrigo</p>
+      <h1 class="hero__title">TALK&nbsp;YOUR&nbsp;SH*T</h1>
+      <p class="hero__promise">Turn the opinions you only share off-camera into social content people send with "THIS."</p>
+      <p class="hero__event">Oct 1 · 12 PM ET</p>
+      <a href="#register" class="cta-button hero__cta">Save My Free Seat</a>
+    </div>
+  </section>
+
+  <!-- ========== OPENING ARGUMENT ========== -->
+  <section class="opening-argument">
+    <div class="container">
+      <div class="reading-column">
+        <p class="opening-argument__lead">You have plenty to say until it's time to post. Then the caveats creep in, the interesting sentence disappears, and you publish something safe, boring, flat, neutral. even you wouldn't send to a friend.</p>
+
+        <p>Let's get the good part back.</p>
+
+        <p>I'll show you how to turn "Can I actually say that?" into content that makes someone send your post to a friend and say, "You need to follow this person." You'll learn to catch Safe Content™ before you publish it and use my 5 Cs to connect what gets you noticed to what you want to be known and paid for.</p>
+
+        <p>For founders and creatives with strong opinions and good work who are smart enough to know that "safe" never gets you paid.</p>
+
+        <div class="opening-argument__cta-wrap">
+          <p class="mono-label" style="color: var(--ink); opacity: 0.6;">Oct 1 · 12 PM ET · Live online</p>
+          <a href="#register" class="cta-button">Save My Free Seat</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIAL: Elyssa Jakim ========== -->
+  <section class="testimonial-pull">
+    <div class="container">
+      <div class="reading-column" style="max-width: 760px;">
+        <blockquote class="testimonial-pull__quote">"My views 4X after a few days of working with Jamie."</blockquote>
+        <p class="testimonial-pull__attribution">Elyssa Jakim</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRANSITION SECTION ========== -->
+  <section class="transition-section">
+    <div class="container">
+      <div class="reading-column">
+        <h2 class="transition-section__headline">Somewhere between "I should post this" and "publish," you disappear&hellip;</h2>
+
+        <p>The thing you told a client that made them say, "Why isn't anyone talking about this?"</p>
+        <p>The voice note you could've published as a reel.</p>
+        <p>The sentence you replaced with "Everyone's journey is different."</p>
+
+        <p>There's a reason those moments land. In this training, we're going to look at what makes them work and how to bring that into the content you actually publish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT THEY'LL LEARN ========== -->
+  <section class="what-theyll-learn" id="learn">
+    <div class="container">
+      <h2 class="what-theyll-learn__heading">Here's what we're getting into</h2>
+
+      <ol class="teaching-list">
+        <li class="teaching-item">
+          <span class="teaching-item__number">01</span>
+          <h3 class="teaching-item__title">Safe Content™: when your editing becomes the problem.</h3>
+          <p class="teaching-item__body">Spot where you've removed everything someone might disagree with and accidentally removed their reason to follow you.</p>
+        </li>
+
+        <li class="teaching-item">
+          <span class="teaching-item__number">02</span>
+          <h3 class="teaching-item__title">The Recognition Effect: "Holy shit. Someone finally said it."</h3>
+          <p class="teaching-item__body">Learn to put words to what your people have experienced but haven't known how to explain. That's the kind of content they send to a friend.</p>
+        </li>
+
+        <li class="teaching-item">
+          <span class="teaching-item__number">03</span>
+          <h3 class="teaching-item__title">My 5 Cs: give every post a job.</h3>
+          <p class="teaching-item__body">Use current events, connection, controversy, credibility, and conversion to reach new people, build trust, and give them a reason to look at your work.</p>
+        </li>
+
+        <li class="teaching-item">
+          <span class="teaching-item__number">04</span>
+          <h3 class="teaching-item__title">Get known without becoming a hostage to your biggest post.</h3>
+          <p class="teaching-item__body">Connect a moment of attention to lasting interest in you, with room to have other interests and change your mind.</p>
+        </li>
+
+        <li class="teaching-item">
+          <span class="teaching-item__number">05</span>
+          <h3 class="teaching-item__title">I got cancelled. I have more to offer you than "ignore the haters."</h3>
+          <p class="teaching-item__body">An honest look at criticism, imagined reactions, and deciding what you're ready to say publicly.</p>
+        </li>
+      </ol>
+
+      <div class="what-theyll-learn__cta">
+        <a href="#register" class="cta-button cta-button--ink">Save My Free Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIAL: Heather Roma ========== -->
+  <section class="testimonial-heather">
+    <div class="container">
+      <p class="testimonial-heather__intro">From "What do I even post?" to this:</p>
+      <blockquote class="testimonial-heather__quote">"With Jamie's coaching I now have endless ideas for getting my content out there in a very clear and also very enticing way. With the tools I learned to use, I'm also making way more personal connections, gathering new leads for my mailing list and have even gotten some purchases of my digital product."</blockquote>
+      <p class="testimonial-heather__attribution">Heather Roma</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT JAMIE ========== -->
+  <section class="about-jamie">
+    <div class="container">
+      <div class="about-jamie__grid">
+        <div class="about-jamie__photo">
+          <!-- JAMIE PHOTO PLACEHOLDER — Replace with Jamie's actual photograph when supplied -->
+          <div class="about-jamie__photo-placeholder">[Jamie's photo placeholder — replace with supplied headshot]</div>
+          <!-- When photo is available:
+            <img src="assets/jamie-arrigo.jpg" alt="Portrait of Jamie Arrigo, creative strategist and creator of POV to Profit" loading="lazy" width="640" height="800" />
+          -->
+        </div>
+
+        <div class="about-jamie__body">
+          <h2 class="about-jamie__heading">Hi, I'm Jamie. There's a strategy behind these rants.</h2>
+
+          <p>I'm a creative strategist, photographer, and the creator of POV to Profit.</p>
+          <p>After being cancelled in 2020, I rebuilt my personal brand and a business that supports my family.</p>
+          <p>Now I help founders and creatives figure out what to say, how to get people to care, and how to connect that attention to their work.</p>
+          <p>Including the people who have spent years thinking, "Maybe I'm just bad at social media." or social media doesnt work or im shadow banned"</p>
+
+          <!-- ========== TESTIMONIAL: Andrew Kaufman, M.D. ========== -->
+          <div class="about-jamie__testimonial">
+            <blockquote class="about-jamie__testimonial-quote">"She spotted emerging trends and cultural shifts early, then built a content strategy that grew our following past 300K across platforms. She demonstrated smart execution that led to thousands of leads per month, with the best months nearing 5K new leads."</blockquote>
+            <p class="about-jamie__testimonial-attribution">Andrew Kaufman, M.D.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL REGISTRATION ========== -->
+  <section class="register" id="register">
+    <div class="container">
+      <div class="reading-column" style="max-width: 640px;">
+        <h2 class="register__heading">Build a following you don't have to fake it for</h2>
+        <p class="register__subheading">You've spent enough time anticipating the person who might take it badly.</p>
+        <p class="register__subheading">Let's make something for the person who's going to send it with "THIS."</p>
+        <p class="register__event">Oct 1 · 12 PM ET · Free live training</p>
+
+        <!-- REGISTRATION FORM — Preview only (not connected to any provider) -->
+        <form class="register__form" id="reg-form" novalidate>
+          <div class="register__form-field">
+            <label class="register__form-label" for="reg-first-name">First name</label>
+            <input
+              class="register__form-input"
+              type="text"
+              id="reg-first-name"
+              name="first_name"
+              placeholder="Your first name"
+              autocomplete="given-name"
+              required
+            />
+            <p class="register__form-error" id="reg-error-name">Please enter your first name.</p>
+          </div>
+
+          <div class="register__form-field">
+            <label class="register__form-label" for="reg-email">Email</label>
+            <input
+              class="register__form-input"
+              type="email"
+              id="reg-email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <p class="register__form-error" id="reg-error-email">Please enter a valid email address.</p>
+          </div>
+
+          <button type="submit" class="cta-button register__cta" id="reg-submit">Save My Free Seat</button>
+
+          <p class="register__form-status register__form-status--loading" id="reg-status-loading">Saving your seat…</p>
+          <p class="register__form-status register__form-status--error" id="reg-status-error">Something went wrong. Please try again.</p>
+
+          <div class="register__preview-note">
+            <strong>Preview notice:</strong> This form is not yet connected to an email provider. No data is collected or stored. Integration details needed: email provider (e.g. ConvertKit, Mailchimp), list ID, tag/segment, and confirmation redirect URL.
+          </div>
+        </form>
+
+        <p class="register__footer">
+          By registering you agree to receive emails from Jamie Arrigo about this training and related content. You can unsubscribe at any time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Form validation — preview only, does not submit or store data
+    (function() {
+      var form = document.getElementById('reg-form');
+      if (!form) return;
+
+      var submitBtn = document.getElementById('reg-submit');
+      var nameInput = document.getElementById('reg-first-name');
+      var emailInput = document.getElementById('reg-email');
+      var errName = document.getElementById('reg-error-name');
+      var errEmail = document.getElementById('reg-error-email');
+      var statusLoading = document.getElementById('reg-status-loading');
+      var statusError = document.getElementById('reg-status-error');
+      var isSubmitting = false;
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (isSubmitting) return;
+
+        var valid = true;
+        errName.classList.remove('visible');
+        errEmail.classList.remove('visible');
+        statusLoading.classList.remove('visible');
+        statusError.classList.remove('visible');
+
+        if (!nameInput.value.trim()) {
+          errName.classList.add('visible');
+          valid = false;
+        }
+
+        if (!validateEmail(emailInput.value.trim())) {
+          errEmail.classList.add('visible');
+          valid = false;
+        }
+
+        if (valid) {
+          isSubmitting = true;
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Saving your seat…';
+          statusLoading.classList.add('visible');
+
+          // NOTE: No backend connected — this is a preview.
+          // When integration is available, replace this with a real fetch() to the provider endpoint.
+          statusLoading.textContent = 'Preview mode: form is not connected to an email provider yet.';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
