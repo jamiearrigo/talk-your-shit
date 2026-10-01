@@ -959,13 +959,16 @@
     }
     .andrew-editorial__headline {
       font-family: var(--font-headline);
-      font-size: clamp(48px, 5.25vw, 78px);
+      font-size: clamp(42px, 4.45vw, 66px);
       line-height: .94;
+      max-width: 100%;
+      overflow-wrap: normal;
       letter-spacing: -.045em;
       font-weight: 700;
       margin: 0;
     }
     .andrew-editorial__headline span { color: var(--signal-red); }
+    .andrew-editorial__headline .andrew-editorial__banned { color: var(--ink); display: inline-block; font-size: .88em; }
     .andrew-editorial__proof {
       background: var(--ink);
       color: var(--sheet);
@@ -1161,7 +1164,7 @@
     <div class="andrew-editorial__grid">
       <div class="andrew-editorial__statement">
         <p class="andrew-editorial__eyebrow">Client proof / Andrew Kaufman, M.D.</p>
-        <h2 class="andrew-editorial__headline">FROM BELIEVING<br>HE WAS<br>“SHADOW-<br>BANNED”<br><span>TO THIS.</span></h2>
+        <h2 class="andrew-editorial__headline">FROM BELIEVING<br>HE WAS<br>“SHADOW-<br><span class="andrew-editorial__banned">BANNED”</span><br><span>TO THIS.</span></h2>
       </div>
       <div class="andrew-editorial__proof">
         <blockquote class="andrew-editorial__quote">“She spotted emerging trends and cultural shifts early, then built a content strategy that grew our following <span>past 300K across platforms.</span> She demonstrated smart execution that led to thousands of leads per month, with the best months nearing 5K new leads.”</blockquote>
