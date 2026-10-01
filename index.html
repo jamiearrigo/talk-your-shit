@@ -1007,6 +1007,17 @@
       .andrew-editorial__quote { font-size: clamp(29px, 8vw, 40px); }
     }
 
+  
+    /* Kit embed */
+    .kit-form-embed {
+      margin-top: 34px;
+      width: 100%;
+    }
+    .kit-form-embed .formkit-form {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+
   </style>
 </head>
 <body>
@@ -1182,45 +1193,10 @@
         <p class="register__subheading">Let's make something for the person who's going to send it with "THIS."</p>
         <p class="register__event">Oct 28 · 12 PM ET · Free live training</p>
 
-        <!-- REGISTRATION FORM — Preview only (not connected to any provider) -->
-        <form class="register__form" id="reg-form" novalidate>
-          <div class="register__form-field">
-            <label class="register__form-label" for="reg-first-name">First name</label>
-            <input
-              class="register__form-input"
-              type="text"
-              id="reg-first-name"
-              name="first_name"
-              placeholder="Your first name"
-              autocomplete="given-name"
-              required
-            />
-            <p class="register__form-error" id="reg-error-name">Please enter your first name.</p>
-          </div>
-
-          <div class="register__form-field">
-            <label class="register__form-label" for="reg-email">Email</label>
-            <input
-              class="register__form-input"
-              type="email"
-              id="reg-email"
-              name="email"
-              placeholder="you@example.com"
-              autocomplete="email"
-              required
-            />
-            <p class="register__form-error" id="reg-error-email">Please enter a valid email address.</p>
-          </div>
-
-          <button type="submit" class="cta-button register__cta" id="reg-submit">Save My Free Seat</button>
-
-          <p class="register__form-status register__form-status--loading" id="reg-status-loading">Saving your seat…</p>
-          <p class="register__form-status register__form-status--error" id="reg-status-error">Something went wrong. Please try again.</p>
-
-          <div class="register__preview-note">
-            <strong>Preview notice:</strong> This form is not yet connected to an email provider. No data is collected or stored. Integration details needed: email provider (e.g. ConvertKit, Mailchimp), list ID, tag/segment, and confirmation redirect URL.
-          </div>
-        </form>
+        <!-- KIT REGISTRATION FORM -->
+        <div class="kit-form-embed">
+          <script async data-uid="5910405e3a" src="https://wake-up-high-five.kit.com/5910405e3a/index.js"></script>
+        </div>
 
         <p class="register__footer">
           By registering you agree to receive emails from Jamie Arrigo about this training and related content. You can unsubscribe at any time.
@@ -1229,58 +1205,7 @@
     </div>
   </section>
 
-  <script>
-    // Form validation — preview only, does not submit or store data
-    (function() {
-      var form = document.getElementById('reg-form');
-      if (!form) return;
 
-      var submitBtn = document.getElementById('reg-submit');
-      var nameInput = document.getElementById('reg-first-name');
-      var emailInput = document.getElementById('reg-email');
-      var errName = document.getElementById('reg-error-name');
-      var errEmail = document.getElementById('reg-error-email');
-      var statusLoading = document.getElementById('reg-status-loading');
-      var statusError = document.getElementById('reg-status-error');
-      var isSubmitting = false;
-
-      function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (isSubmitting) return;
-
-        var valid = true;
-        errName.classList.remove('visible');
-        errEmail.classList.remove('visible');
-        statusLoading.classList.remove('visible');
-        statusError.classList.remove('visible');
-
-        if (!nameInput.value.trim()) {
-          errName.classList.add('visible');
-          valid = false;
-        }
-
-        if (!validateEmail(emailInput.value.trim())) {
-          errEmail.classList.add('visible');
-          valid = false;
-        }
-
-        if (valid) {
-          isSubmitting = true;
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Saving your seat…';
-          statusLoading.classList.add('visible');
-
-          // NOTE: No backend connected — this is a preview.
-          // When integration is available, replace this with a real fetch() to the provider endpoint.
-          statusLoading.textContent = 'Preview mode: form is not connected to an email provider yet.';
-        }
-      });
-    })();
-  </script>
 
 </body>
 </html>
