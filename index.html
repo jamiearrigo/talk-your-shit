@@ -315,6 +315,26 @@
       .hero__cta { width: 100%; justify-content: center; padding: 18px 20px; }
     }
 
+    /* ========== Editorial system ========== */
+    .opening-argument, .transition-section, .testimonial-heather, .about-jamie {
+      background-color: #f2eee5;
+      background-image: radial-gradient(rgba(23,18,15,.045) .7px, transparent .7px);
+      background-size: 5px 5px;
+    }
+
+    .editorial-kicker {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      border: 1px solid currentColor;
+      padding: 7px 11px;
+      margin-bottom: 20px;
+    }
+
+    .red-type { color: var(--signal-red); }
+
     /* ========== Section: Opening Argument (paper) ========== */
     .opening-argument {
       background: var(--sheet);
@@ -323,10 +343,12 @@
 
     .opening-argument__lead {
       font-family: var(--font-headline);
-      font-weight: 600;
-      font-size: clamp(26px, 4.5vw, 40px);
-      line-height: 1.25;
-      margin-bottom: 32px;
+      font-weight: 700;
+      font-size: clamp(46px, 6.3vw, 88px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      margin-bottom: 48px;
+      max-width: 1080px;
     }
 
     .opening-argument p {
@@ -420,10 +442,12 @@
 
     .transition-section__headline {
       font-family: var(--font-headline);
-      font-weight: 600;
-      font-size: clamp(24px, 4vw, 34px);
-      line-height: 1.3;
-      margin-bottom: 28px;
+      font-weight: 700;
+      font-size: clamp(44px, 6vw, 82px);
+      line-height: .98;
+      letter-spacing: -.04em;
+      margin-bottom: 42px;
+      max-width: 1080px;
     }
 
     .transition-section p {
@@ -818,7 +842,8 @@
   <section class="opening-argument">
     <div class="container">
       <div class="reading-column">
-        <p class="opening-argument__lead">You have plenty to say until it's time to post. Then the caveats creep in, the interesting sentence disappears, and you publish something safe, boring, flat, neutral. even you wouldn't send to a friend.</p>
+        <span class="editorial-kicker">Your POV is the strategy</span>
+        <p class="opening-argument__lead">You have plenty to say until it's time to post. Then the caveats creep in, the interesting sentence disappears, and you publish something <span class="red-type">safe, boring, flat, neutral.</span></p>
 
         <p>Let's get the good part back.</p>
 
@@ -851,7 +876,8 @@
   <section class="transition-section">
     <div class="container">
       <div class="reading-column">
-        <h2 class="transition-section__headline">Somewhere between "I should post this" and "publish," you disappear&hellip;</h2>
+        <span class="editorial-kicker">Safe content puts you in a box</span>
+        <h2 class="transition-section__headline">Somewhere between “I should post this” and “publish,” <span class="red-type">you disappear.</span></h2>
 
         <p>The thing you told a client that made them say, "Why isn't anyone talking about this?"</p>
         <p>The voice note you could've published as a reel.</p>
