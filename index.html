@@ -873,6 +873,53 @@
       outline: 3px solid var(--bright-blue);
       outline-offset: 2px;
     }
+  
+    /* Andrew Kaufman editorial proof block */
+    .andrew-proof {
+      background: #E5252B;
+      color: #17120F;
+      border-top: 1px solid #17120F;
+      border-bottom: 1px solid #17120F;
+      padding: clamp(64px, 8vw, 112px) 0;
+    }
+    .andrew-proof__kicker {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin: 0 0 30px;
+    }
+    .andrew-proof__quote {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-style: normal;
+      font-size: clamp(42px, 5.4vw, 78px);
+      line-height: .98;
+      letter-spacing: -.04em;
+      max-width: 1180px;
+      margin: 0;
+      color: #17120F;
+    }
+    .andrew-proof .proof-highlight {
+      background: #F2ECE0;
+      color: #17120F;
+      padding: 0 .07em .04em;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .andrew-proof__attribution {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin: 36px 0 0;
+      padding-top: 15px;
+      border-top: 1px solid rgba(23,18,15,.5);
+      max-width: 390px;
+    }
+
   </style>
 </head>
 <body>
