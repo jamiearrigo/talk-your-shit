@@ -177,8 +177,8 @@
     /* ========== HERO ========== */
     .hero {
       position: relative;
-      background: var(--ink);
-      color: #ffffff;
+      background: var(--sheet);
+      color: var(--ink);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -214,14 +214,14 @@
     .hero__ocean-overlay {
       position: absolute;
       inset: 0;
-      /* Top ~35% shows the ocean, bottom ~65% fades to solid black */
+      /* Top ~35% shows the ocean, bottom ~65% fades to solid tan/sheet */
       background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 15%,
-        rgba(0, 0, 0, 0.5) 30%,
-        rgba(0, 0, 0, 0.85) 40%,
-        rgba(0, 0, 0, 1) 50%,
-        #000000 100%
+        rgba(242, 236, 224, 0) 0%,
+        rgba(242, 236, 224, 0) 15%,
+        rgba(242, 236, 224, 0.5) 30%,
+        rgba(242, 236, 224, 0.85) 40%,
+        rgba(242, 236, 224, 1) 50%,
+        #F2ECE0 100%
       );
       z-index: 1;
     }
@@ -237,7 +237,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #ffffff;
+      color: var(--ink);
       opacity: 0.65;
       margin-bottom: 28px;
     }
@@ -248,9 +248,9 @@
       font-size: clamp(56px, 15vw, 156px);
       line-height: 0.9;
       letter-spacing: -0.025em;
-      color: #ffffff;
+      color: var(--ink);
       margin-bottom: 36px;
-      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 2px 24px rgba(242, 236, 224, 0.5);
     }
 
     .hero__promise {
@@ -259,9 +259,9 @@
       font-size: clamp(20px, 3.5vw, 30px);
       line-height: 1.4;
       max-width: 620px;
-      color: #ffffff;
+      color: var(--ink);
       margin-bottom: 32px;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 2px 16px rgba(242, 236, 224, 0.4);
     }
 
     .hero__event {
@@ -269,7 +269,7 @@
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.08em;
-      color: #ffffff;
+      color: var(--ink);
       opacity: 0.8;
       margin-bottom: 40px;
     }
